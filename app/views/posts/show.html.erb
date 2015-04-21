@@ -1,0 +1,19 @@
+<h1 class="bg-success"></h1><h1><%= @post.title %></h1>
+<p class="bg-info"></p><p><%= @post.body %></p>
+<p class="bg-info"><%= @post.date_published %> </p>
+
+<%= @ comments.each do |comment| %>
+<p class="bg-danger"><%= comment.body%></p>
+<%end%>
+<div class="container">
+    <%= link_to "All Posts", posts_path, class: "btn btn-warning btn-sm"%>
+</div>
+<%= form_tag(post_comments_path (@post), method: :post) do%>
+<div class="form-group">
+
+    <p> <%= text_area_tag :body %></p>
+</div>
+
+<%= f.submit "Post Comment", class: "btn btn-info active"%>
+<% end %>
+<p></p>
