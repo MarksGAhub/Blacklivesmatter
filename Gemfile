@@ -14,9 +14,14 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'figaro'
+
 gem 'bootstrap-sass'
+
 gem 'carrierwave','0.10.0'
+
 gem 'mini_magick','3.8.0'
+
+gem 'bcrypt', '~> 3.1.7'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
