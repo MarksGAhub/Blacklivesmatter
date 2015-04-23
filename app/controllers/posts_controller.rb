@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       def create
           @post = Post.new(post_params)
       if @post.save
-            redirect_to posts_paths
+            redirect_to posts_path
         else
             render 'new'
         end
@@ -19,14 +19,13 @@ class PostsController < ApplicationController
 
       def show
         @post = Post.find(params[:id])
-
-
       end
+
 
       private
 
       def post_params
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body, :picture)
 
     end
 

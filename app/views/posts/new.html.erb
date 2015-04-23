@@ -4,16 +4,16 @@
 
 <ul>
     <div class="form-group">
-        <li><%=f.label :title%></li>
-        <li><%= f.text_field :title, class "form-control"%></li>
+        <li><%= f.label :title%></li>
+        <li><%= f.text_field :title, class: "form-control"%></li>
     </div>
     <div class="form-group">
         <li><%= f.label :body%></li>
-        <li><%= f.text_area :body, placeholder: "Share a story..." class "form-control"%></li>
+        <li><%= f.text_area :body, class: "form-control"%></li>
     </div>
     <div class="form-group">
         <li><%= f.label :picture%></li>
-        <li><%= f.file_field :picture, class "form-control"%></li>
+        <li><%= f.file_field :picture, class: "form-control"%></li>
     </div>
 
     <li><%= f.submit "Create Post", class: "btn btn-default" %></li>
