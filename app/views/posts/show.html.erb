@@ -1,6 +1,7 @@
 <h1 class="bg-success"></h1><h1><%= @post.title %></h1>
 <p class="bg-info"></p><p><%= @post.body %></p>
 <p class="bg-info"><%= @post.date_published %> </p>
+<div> <%= image_tag @post.picture.url %> </div>
 
 <%= @ comments.each do |comment| %>
 <p class="bg-danger"><%= comment.body%></p>
