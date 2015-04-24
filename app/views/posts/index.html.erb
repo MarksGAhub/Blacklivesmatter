@@ -1,4 +1,4 @@
-<h1>Completed Post and pics</h1>
+<h1>Completed Post </h1>
 
 <div class="container">
     <div class="row">
@@ -10,7 +10,7 @@
                     <td></td>
                 </tr>
                 <% @posts.each do | p | %>
-                <%= image_tag post.picture.url if post.picture? %>
+                <%= image_tag p.picture.url if p.picture? %>
                 <tr class=" active " >
                     <td><%= p.title %></td>
                     <td><%= p.body %></td>

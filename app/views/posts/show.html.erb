@@ -5,7 +5,7 @@
         <div><%= image_tag @post.picture.url %></div>
     </div>
     <p class="bg-info"><h3 class="signin"><%= @post.body %></h3></p>
-    <% @comments.each do | comment | %>
+    <% @post.comments.each do | comment | %>
         <div class="panel panel-default">
             <div class="panel-body">
                 <%= comment.body %>
