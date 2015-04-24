@@ -1,15 +1,28 @@
 <h1>Completed Post and pics</h1>
-<ul>
-    <% @posts.each do |post| %>
-    <li>
-    <tr class=" active " >
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <table class=" table table-hover">
+                <tr >
+                    <td> <strong>Blog </strong></td>
+                    <td> <strong>Description</strong></td>
+                    <td></td>
+                </tr>
+                <% @posts.each do | p | %>
+                <%= image_tag post.picture.url if post.picture? %>
+                <tr class=" active " >
                     <td><%= p.title %></td>
                     <td><%= p.body %></td>
                     <td><%= link_to "Show Post", post_path(p) , class: "btn btn-primary btn-xs" %></td>
                 </tr>
-        <%= image_tag post.picture.url if post.picture? %>
-    </li>
-    <% end %>
-</ul>
-
-
+                <%end%>
+            </table>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+                    <%= link_to "New Post", new_post_path , class: "btn btn-success btn-lg" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

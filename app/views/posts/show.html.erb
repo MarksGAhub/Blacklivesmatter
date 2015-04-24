@@ -1,20 +1,22 @@
-<h1 class="bg-success"></h1><h1><%= @post.title %></h1>
-<p class="bg-info"></p><p><%= @post.body %></p>
-<p class="bg-info"><%= @post.date_published %> </p>
-<div> <%= image_tag @post.picture.url %> </div>
-
-<%= @comments.each do |comment| %>
-<p class="bg-danger"><%= comment.body%></p>
-<%end%>
 <div class="container">
-    <%= link_to "All Posts", posts_path, class: "btn btn-warning btn-sm"%>
+    <div class="page-header">
+        <h1 class="signin"><%= @post.title %></h1>
+        <p class="signin nright"><%= @post.date_published %></p>
+        <div><%= image_tag @post.picture.url %></div>
+    </div>
+    <p class="bg-info"><h3 class="signin"><%= @post.body %></h3></p>
+    <% @comments.each do | comment | %>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <%= comment.body %>
+                <br>
+                <% if comment.user%>
+                    <strong>Posted by:</strong><%= comment.user.name %>
+                <%else%>
+                    <strong>Posted by: </strong>Anonymous
+                <% end %>
+            </div>
+        </div>
+    <%end%>
+    <%= render 'posts/comment_form' %>
 </div>
-<%= form_tag(post_comments_path (@post), method: :post) do%>
-<div class="form-group">
-
-    <p> <%= text_area_tag :body %></p>
-</div>
-
-<%= f.submit "Post Comment", class: "btn btn-info active"%>
-<% end %>
-<p></p>
