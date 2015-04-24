@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-root 'title_pages#index'
+  root 'static_pages#home'
 
-resources :users, only: [:new, :create]
+  get 'static_pages/about'
 
-resources :sessions, only: [:new, :create, :destroy]
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+resources :users, only: [:new, :create, :show]
 
 resources :posts do
     resources :comments, only: [:create, :destroy]
 end
 
 
-
-  # resources :posts, except: [:edit, :update, :destroy] do
-  #       resources :comments, only: :create
-  # end
 end

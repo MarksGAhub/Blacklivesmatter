@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # gem 'pg'
 
+gem 'better_errors'
+
 gem 'figaro'
 
 gem 'bootstrap-sass'
