@@ -6,9 +6,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<body class="back">
+        <nav class="navbar navbar-inverse fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <%= link_to "Blacklivesmatter", root_path , class: 'navbar-brand' %>
+                </div>
+                <div class="pull-right ">
+                    <% if current_user %>
+                        <p class="signin">Signed in as <strong><%= current_user.name%></strong></p>
+                        <%= link_to "Logout", logout_path , class: "navbar-link btn btn-default navbar-btn "%>
+                    <%else%>
+                        <%= render 'sessions/login_form'%>
+                    <%end%>
+                </div>
+            </div>
+        </nav>
 
 <%= yield %>
-
+<%= params %>
 </body>
 </html>

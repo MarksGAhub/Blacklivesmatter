@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       # logged in when they navigate around our website.
       session[:user_id] = user.id
       flash[:success] = 'Login successful!'
-      redirect_to '/'
+      redirect_to user_path(user.id)
     else
     # If user's login doesn't work, send them back to the login form.
       flash[:danger] = 'There was a problem logging you in.'
