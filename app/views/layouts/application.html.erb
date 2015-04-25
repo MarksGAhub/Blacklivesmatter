@@ -17,14 +17,17 @@
                     <% if current_user %>
                         <p class="signin">Signed in as <strong><%= current_user.name%></strong></p>
                         <%= link_to "Logout", logout_path , class: "navbar-link btn btn-default navbar-btn "%>
+                        <%= link_to "Profile", current_user , class: "navbar-link btn btn-default navbar-btn "%>
                     <%else%>
-                        <%= render 'sessions/login_form'%>
+                        <%= link_to "Login", login_path, class: "btn btn-default" %>
                     <%end%>
                 </div>
             </div>
         </nav>
 
 <%= yield %>
+
+<!-- delete the params thing after the project has been completed -->
 <%= params %>
 </body>
 </html>
