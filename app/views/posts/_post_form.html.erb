@@ -12,8 +12,8 @@
         <span>
              <%= f.file_field :picture %>
         </span>
-        <li><%= f.submit "Create Post" , class: " btn btn-default btn-lg" %></li>
+        <%= f.submit "Create Post" , class: " btn btn-default btn-lg" %>
         <!-- The below button will link to the users profile page -->
-        <li><%= link_to "Cancel", current_user, class: "btn btn-default btn-lg" %></li>
+        <%= link_to "Cancel", current_user, class: "btn btn-default btn-lg" %>
     </ul>
 <%end%>
