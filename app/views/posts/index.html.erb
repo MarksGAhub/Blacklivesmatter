@@ -16,7 +16,7 @@
                     <td><%= p.body %></td>
                     <td><%= link_to "Show Story", post_path(p) , class: "btn btn-primary btn-xs" %></td>
                     <td><%= link_to "Edit Story", edit_post_path(p) , class: "btn btn-primary btn-xs" %></td>
-                    <td><%= link_to "Delete Story", :posts, method: :delete, data: {confirm: "Are you sure you want to delete this post?"}, class: "btn btn-primary btn-xs" %></td>
+                    <td><%= link_to "Delete Story",(p) , method: :delete, data: {confirm: "Are you sure you want to delete this post?"}, class: "btn btn-primary btn-xs" %></td>
                 </tr>
                 <%end%>
             </table>

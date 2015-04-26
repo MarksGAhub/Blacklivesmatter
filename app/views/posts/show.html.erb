@@ -8,6 +8,7 @@
     <% @post.comments.each do | comment | %>
         <div class="panel panel-default">
             <div class="panel-body">
+
                 <%= comment.comment %>
                 <br>
                 <% if comment.user%>
