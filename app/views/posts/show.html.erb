@@ -5,15 +5,14 @@
         <div><%= image_tag @post.picture.url %></div>
     </div>
     <p class="bg-info"><h3 class="signin"><%= @post.body %></h3></p>
-    <% @post.comments.each do | comment | %>
+    <% @comments.each do | comment | %>
         <div class="panel panel-default">
             <div class="panel-body">
-
                 <%= comment.comment %>
                 <br>
                 <% if comment.user%>
                 <!-- changed comment.user to users -->
-                    <strong>Posted by:</strong><%= comment.users.name %>
+                    <strong>Posted by:</strong><%= comment.user.name %>
                 <%else%>
                     <strong>Posted by: </strong>Anonymous
                 <% end %>
