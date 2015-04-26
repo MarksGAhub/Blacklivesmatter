@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
     mount_uploader :picture, PictureUploader
 
+
+
     def date_published
         created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")
     end

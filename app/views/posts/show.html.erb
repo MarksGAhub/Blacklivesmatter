@@ -10,11 +10,9 @@
             <div class="panel-body">
                 <%= comment.comment %>
                 <br>
-                <% if comment.user%>
-                    <strong>Posted by:</strong><%= comment.user.name %>
-                <%else%>
-                    <strong>Posted by: </strong>Anonymous
-                <% end %>
+                <%= comment.user%>
+                <!-- changed comment.user to users -->
+
             </div>
         </div>
     <%end%>
