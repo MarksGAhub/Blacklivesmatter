@@ -10,7 +10,7 @@
                     <td></td>
                 </tr>
                 <% @posts.each do | p | %>
-                <%= image_tag p.picture.url if p.picture? %>
+
                 <tr class=" active " >
                     <td><%= p.title %></td>
                     <td><%= p.body %></td>
